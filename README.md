@@ -16,4 +16,5 @@ Additional best practices would be requiring an additional review by engineering
 
 ## Demo
 
-- Simple Alert File: https://plasticmind.github.io/nys-flat-file-demo/
+- Simple Dynamic Alert: https://plasticmind.github.io/nys-flat-file-demo/
+- Structured Dynamic Alert: https://plasticmind.github.io/nys-flat-file-demo/structured.html
