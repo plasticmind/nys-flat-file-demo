@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Structured Dynamic Alert Example</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Test example" />
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      overflow: auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+    #alert-container {
+    background-color: #ffcc00; /* Yellow background for high visibility */
+    color: #333; /* Dark text for contrast */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#alert-icon img {
+    width: 24px; /* Smaller icon size */
+    height: auto;
+}
+
+#alert-message {
+    flex-grow: 1;
+    font-size: 14px; /* Adjusted for inline layout */
+    margin: 0; /* Remove any default margin */
+}
+
+#alert-cta {
+    background-color: #007bff; /* Blue background for the button */
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Slightly smaller padding for inline layout */
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#alert-cta:hover {
+    background-color: #0056b3; /* Darker blue on hover for button */
+}
+
+  </style> 
+</head>
+<body>
+  <div class="container">
+    <h1>Structured Dynamic Alert Example</h1>
+    <div id="alert-container" style="display: none;">
+      <div id="alert-icon"></div>
+      <div id="alert-message"></div>
+      <button id="alert-cta" style="display: none;"></button>
+    </div>
+    <p><b>The content above this div is pulled in dynamically from the <code>alert.json</code> file.</b> 👆🏻 If nothing appears above this message, that usually means the alert file is empty or missing.</p>
+    <p>Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. While some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.</p>
+  </div>
+</body>
+<script>
+  fetch('https://plasticmind.github.io/nys-flat-file-demo/alert.json')
+  .then(response => response.json())
+    .then(data => {
+        if (Object.keys(data).length === 0) {
+            // If the JSON is empty, do not display the alert
+            document.getElementById('alert-container').style.display = 'none';
+            return;
+        }
+
+        const container = document.getElementById('alert-container');
+        const icon = document.getElementById('alert-icon');
+        const message = document.getElementById('alert-message');
+        const cta = document.getElementById('alert-cta');
+
+        // Display the icon if present
+        if (data.icon) {
+            icon.innerHTML = `<img src="${data.icon}" alt="Alert Icon">`;
+        }
+
+        // Display the message if present
+        if (data.message) {
+            message.innerText = data.message;
+        }
+
+        // Display CTA if text and URL are present
+        if (data['cta-text'] && data['cta-url']) {
+            cta.innerText = data['cta-text'];
+            cta.onclick = () => window.location.href = data['cta-url'];
+            cta.style.display = 'block';
+        }
+
+        container.style.display = 'flex';
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
+</html>
