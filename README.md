@@ -1,5 +1,7 @@
 # NYS / Unav Alerts / Flat File Demo
 
+## Description
+
 This is a simple example of how a flat file system could serve a universal nav to New York State government sites, while still allowing content like alerts to be pulled in dynamically from a standalone file that is easy to edit.
 
 The concept is straightforward:
@@ -11,3 +13,7 @@ The concept is straightforward:
 - The updated alert would be updated displayed on all NYS government websites using this embedded Universal Navigation. (There may be a short delay.)
 
 Additional best practices would be requiring an additional review by engineering teams or a pull request to approve the change. This prevents any inadvertant mistakes from causing problems when the alerts deploy, without significant overhead.
+
+## Demo
+
+- Simple Alert File: https://plasticmind.github.io/nys-flat-file-demo/
