@@ -10,7 +10,7 @@ The concept is straightforward:
 - The content of the alert is fetched from another file in the repository. If an alert exists, it gets rendered within the Universal Nav.
 - Editorial teams responsible for managing the alert content would navigate to the alert file in GitHub, click the "Edit" button, and modify the contents of the file.
 - Once the change is made, the editor would click "Commit changes" and add a brief description of the changes made (which can help track changes over time).
-- The updated alert would be updated displayed on all NYS government websites using this embedded Universal Navigation. (There may be a short delay.)
+- The updated alert would be updated displayed on all NYS government websites using this embedded Universal Navigation. (There may be a delay, depending on how deployments are set up.)
 
 Additional best practices would be requiring an additional review by engineering teams or a pull request to approve the change. This prevents any inadvertant mistakes from causing problems when the alerts deploy, without significant overhead.
 
