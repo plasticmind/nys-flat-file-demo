@@ -1,7 +1,7 @@
 {
   "severity": "high",
   "icon": "https://www.ny.gov/sites/default/files/2022-01/HousingCommubnityRev.svg",
-  "message": "Updated Storm Warning: It's going to be a big one.",
-  "cta-text": "Learn More",
-  "cta-url": "https://www.dec.ny.gov/news/public-safety/storm-information"
+  "message": "Things are fine.",
+  "cta-text": "Learn Less",
+  "cta-url": "https://google.com"
 }
