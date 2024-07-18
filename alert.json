@@ -1,7 +1,7 @@
 {
   "severity": "high",
   "icon": "https://www.ny.gov/sites/default/files/2022-01/HousingCommubnityRev.svg",
-  "message": "Urgent weather warning: Severe thunderstorm approaching.",
-  "cta-text": "Learn More",
+  "message": "Everything is fine!",
+  "cta-text": "Learn Less",
   "cta-url": "https://www.dec.ny.gov/news/public-safety/storm-information"
 }
